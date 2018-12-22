@@ -1,0 +1,19 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block body_id 'admin_post_new' %}
+
+{% block main %}
+    <h1>{{ 'title.post_new'|trans }}</h1>
+
+    {{ include('admin/blog/_form.html.twig', {
+        form: form,
+        button_label: 'label.create_post'|trans,
+        include_back_to_home_link: true,
+    }, with_context = false) }}
+{% endblock %}
+
+{% block sidebar %}
+    {{ parent() }}
+
+    {{ show_source_code(_self) }}
+{% endblock %}
